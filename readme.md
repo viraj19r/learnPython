@@ -32,7 +32,7 @@
 Instructions that a Python interpreter can execute are called statements. For example, `a = 1` is an assignment statement. `if` statement, `for` statement, `while` statement, etc.
 
   ### Multi-line statement
-  - In Python, the end of a statement is marked by a newline character. But we can make a statement extend over multiple lines with the line continuation character (\).
+  - In Python, the end of a statement is marked by a newline character. But we can make a statement extend over multiple lines with the line continuation character`(\)` .
   For example:
   ```
   a = 1 + 2 + 3 + \
@@ -246,8 +246,7 @@ In the above program, we use boolean literal True and False. In Python, True rep
   drink = "Available"
   food = None
   ```
-
-  ## Literal Collections
+## Literal Collections
 
   There are four different literal collections List literals, Tuple literals, Dict literals, and Set literals.
 ```
@@ -261,5 +260,296 @@ vowels = {'a', 'e', 'i' , 'o', 'u'} #set
 ```
 
 - We can use the `type()` function to know which class a variable or a value belongs to. Similarly, the `isinstance()` function is used to check if an object belongs to a particular class.
+
+## Python type conversion and type casting
+
+The process of converting the value of one data type (integer, string, float, etc.) to another data type is called type conversion. Python has two types of type conversion.
+
+1. Implicit Type Conversion
+2. Explicit Type Conversion
+
+
+### Implicit Type Conversion
+
+In Implicit type conversion, Python automatically converts one data type to another data type. This process doesn't need any user involvement.
+
+Let's see an example where Python promotes the conversion of the lower data type (integer) to the higher data type (float) to avoid data loss.
+
+```
+num_int = 123   #integer
+num_flo = 1.23  #float
+
+num_new = num_int + num_flo  #float
+```
+Addition of string(higher) data type and integer(lower) datatype
+
+```
+num_int = 123        #number
+num_str = "456"   #string
+print(num_int+num_str)  #Type error
+``` 
+
+### Explicit Type Conversion
+
+In Explicit Type Conversion, users convert the data type of an object to required data type. We use the predefined functions like int(), float(), str(), etc to perform explicit type conversion.
+
+This type of conversion is also called typecasting because the user casts (changes) the data type of the objects.
+
+Syntax :
+
+`<required_datatype>(expression)`
+Typecasting can be done by assigning the required data type function to the expression.
+
+```
+num_int = 123 #int
+num_str = "456"  #string
+
+num_str = int(num_str)   #int
+
+num_sum = num_int + num_str  #int
+```
+- In Type Casting, loss of data may occur as we enforce the object to a specific data type.
+
+## Python output using `print()` function
+
+We use the print() function to output data to the standard output device (screen)
+Ex:-
+`print('This sentence is output to the screen')`
+```
+a = 5
+print('The value of a is', a)
+```
+
+In the second print() statement, we can notice that space was added between the string and the value of variable a. This is by default, but we can change it.
+
+The actual syntax of the print() function is:
+```
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+```
+Here, objects is the value(s) to be printed.
+
+The sep separator is used between the values. It defaults into a space character.
+
+After all values are printed, end is printed. It defaults into a new line.
+
+The file is the object where the values are printed and its default value is sys.stdout (screen). Here is an example to illustrate this.
+```
+print(1, 2, 3, 4)
+print(1, 2, 3, 4, sep='*')
+print(1, 2, 3, 4, sep='#', end='&')
+```
+output: 
+```
+1 2 3 4
+1*2*3*4
+1#2#3#4&
+```
+### Output formatting
+Sometimes we would like to format our output to make it look attractive. This can be done by using the `str.format()` method. This method is visible to any string object.
+```
+>>> x = 5; y = 10
+>>> print('The value of x is {} and y is {}'.format(x,y))
+The value of x is 5 and y is 10
+```
+Here, the curly braces `{}` are used as placeholders. We can specify the order in which they are printed by using numbers (tuple index).
+```
+print('I love {0} and {1}'.format('bread','butter'))
+print('I love {1} and {0}'.format('bread','butter'))
+```
+output :
+```
+I love bread and butter
+I love butter and bread
+```
+
+We can even use keyword arguments to format the string.
+```
+>>> print('Hello {name}, {greeting}'.format(greeting = 'Good morning', name = 'John'))
+Hello John, Good morning
+```
+
+We can also format strings like the old sprintf() style used in C programming language. We use the % operator to accomplish this.
+
+```
+>>> x = 12.3456789
+>>> print('The value of x is %3.2f' %x)
+The value of x is 12.35
+>>> print('The value of x is %3.4f' %x)
+The value of x is 12.3457
+```
+
+## Python Input
+
+To allow flexibility, we might want to take the input from the user. In Python, we have the input() function to allow this. The syntax for input() is:
+
+```
+input([prompt])
+```
+where prompt is the string we wish to display on the screen. It is optional.
+
+```
+>>> num = input('Enter a number: ')
+Enter a number: 10
+>>> num
+'10'
+```
+
+Here, we can see that the entered value 10 is a string, not a number. To convert this into a number we can use int() or float() functions.
+```
+>>> int('10')
+10
+>>> float('10')
+10.0
+```
+
+
+This same operation can be performed using the eval() function. But eval takes it further. It can evaluate even expressions, provided the input is a string
+```
+>>> int('2+3')
+Traceback (most recent call last):
+  File "<string>", line 301, in runcode
+  File "<interactive input>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '2+3'
+>>> eval('2+3')
+5
+```
+## Python Import
+
+When our program grows bigger, it is a good idea to break it into different modules.
+
+A module is a file containing Python definitions and statements. Python modules have a filename and end with the extension .py.
+
+Definitions inside a module can be imported to another module or the interactive interpreter in Python. We use the import keyword to do this.
+
+`import math`
+```
+import math
+print(math.pi)
+```
+O/P - 3.14159263
+
+
+Now all the definitions inside math module are available in our scope. We can also import some specific attributes and functions only, using the from keyword. For example:
+```
+>>> from math import pi
+>>> pi
+3.141592653589793
+```
+
+While importing a module, Python looks at several places defined in sys.path. It is a list of directory locations.
+```
+>>> import sys
+>>> sys.path
+['', 
+ 'C:\\Python33\\Lib\\idlelib', 
+ 'C:\\Windows\\system32\\python33.zip', 
+ 'C:\\Python33\\DLLs', 
+ 'C:\\Python33\\lib', 
+ 'C:\\Python33', 
+ 'C:\\Python33\\lib\\site-packages']
+```
+We can also add our own location to this list.
+
+
+## Operators in Python
+
+Operators are special symbols in Python that carry out arithmetic or logical computation. The value that the operator operates on is called the operand.
+
+### Arithmetic Operator
+```
++ - addition
+- - subtraction
+/ - division
+* - multiplication
+% - modulus
+// - quotient
+** - power(2**2 - 2^2)
+```
+### Comparison Operator
+
+```
+> - greater than
+< - less than
+== - equal to
+!= - not equal to
+>= - greater than equal to
+<= - less than equal to
+```
+
+### Logical Operator
+```
+and - true if both true - x and y
+or - true if either of one is true - x or y
+not - true if false(complement) - not x
+```
+
+### Bitwise Operators 
+
+
+
+
+
+
+
+
+### Assignment Operator
+
+
+## Special Operators
+Python language offers some special types of operators like the identity operator or the membership operator.
+
+### Identity Operators
+`is` and `is not` are the identity operators in Python. They are used to check if two values (or variables) are located on the same part of the memory. Two variables that are equal does not imply that they are identical.
+
+```
+is - true if the operands are identical(refers to same object) - x is True
+is not - true if the operands are not identical(do not refer to same object) - x is not True
+```
+
+```
+x1 = 5
+y1 = 5
+x2 = 'Hello'
+y2 = 'Hello'
+x3 = [1,2,3]
+y3 = [1,2,3]
+
+# Output: False
+print(x1 is not y1)
+
+# Output: True
+print(x2 is y2)
+
+# Output: False
+print(x3 is y3)
+```
+
+### Membership operators
+`in` and `not in` are the membership operators in Python. They are used to test whether a value or variable is found in a sequence (string, list, tuple, set and dictionary).
+
+- In a dictionary we can only test for presence of key, not the value.
+```
+in - true if value/variable is found in the sequence - 5 in x
+not in - true if value/variable is not found in the sequence - 5 not in x.
+```
+```
+x = 'Hello world'
+y = {1:'a',2:'b'}
+
+# Output: True
+print('H' in x)
+
+# Output: True
+print('hello' not in x)
+
+# Output: True
+print(1 in y)
+
+# Output: False
+print('a' in y)
+```
+
+
+## [Python Namespace and Scope](https://www.programiz.com/python-programming/namespace)
 
 
