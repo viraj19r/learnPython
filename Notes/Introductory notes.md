@@ -27,7 +27,10 @@
  - Always give the identifiers a name that makes sense. While `c = 10` is a valid name, writing `count = 10` would make more sense, and it would be easier to figure out what it represents when you look at your code after a long gap.
  - Multiple words can be separated using an underscore, like `this_is_a_long_variable`.
 
+### Run python code
 
+Python syntax can be executed by writing directly in the Command Line or by creating a python file on the server, using the .py file extension, and running it in the Command Line
+`C:\Users\Your Name>python myfile.py`
 ## Python Statement
 Instructions that a Python interpreter can execute are called statements. For example, `a = 1` is an assignment statement. `if` statement, `for` statement, `while` statement, etc.
 
