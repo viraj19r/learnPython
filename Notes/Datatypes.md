@@ -1,14 +1,14 @@
 Python has the following data types built-in by default
 
-|type  |   data     |  
-|----|---------|
-|Text  | string|
-|Numeric| int,float,complex| 
-|Sequence |list,tuple,range|
-|Mapping |dict|
-|Set | set,frozen set|
-|Boolean|bool|
-|Binary|bytes,bytearray,memoryview|
+| type     | data                       |
+| -------- | -------------------------- |
+| Text     | string                     |
+| Numeric  | int,float,complex          |
+| Sequence | list,tuple,range           |
+| Mapping  | dict                       |
+| Set      | set,frozen set             |
+| Boolean  | bool                       |
+| Binary   | bytes,bytearray,memoryview |
 
 
 ### Getting the Data Type
@@ -35,7 +35,7 @@ print(random.randrange(1, 10))
 
 ```
 
-
+-----------------------------------------------------------------------
 ## String
 - string in python are surrounded by either single or double quotation marks
 - You can assign a multiline string to a variable by using three quotes(either single or double)
@@ -163,6 +163,8 @@ print(isinstance(x, int))
 ```
 O/P :
 `True`
+
+-----------------------------------------------------------------
 ## Python List
 
 Lists are used to store multiple items in a single variable.
@@ -323,11 +325,73 @@ Another way to make a copy is to use the built-in method `list()`.
 - we can join by appending each item of one list to other
 - using addition `list3 = list1 + list2
 - using `extend()` method
+-------------------------------------------------------------------
+## Tuple 
+
+- store multiple items in single variable
+- ordered and unchangeable(cannot add or remove or change once created), allow duplicate values
+
+`thisTuple = ("apple","mango","cherry")`
 
 
+- To determine no of items in a tuple, use `len()`.
+- To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple
+```
+thistuple = ("apple",)
+
+thistuple = ("apple") #Not a tuple
+```
+- tuple items can be any data type
+- tuple can contain different data types
+- type of tuple is also object
+- It is also possible to use the `tuple()` constructor to make a tuple.
+```
+thistuple = tuple(("apple", "banana", "cherry")) # note the double round-brackets
+```
+- we can access the tuple with same methods we used with lists
+
+### changing tuples
+
+- Once a tuple is created, you cannot change its values. Tuples are unchangeable, or immutable as it also is called.But there is a workaround. You can convert the tuple into a list, change the list, and convert the list back into a tuple.
+```
+x = ("apple", "banana", "cherry")
+y = list(x)
+y[1] = "kiwi"
+x = tuple(y)
+```
+- delete the tuple using `del` keyword
+`del thistuple`
+
+- unpacking a tuple
+```
+fruits = ("apple", "banana", "cherry")
+
+(green, yellow, red) = fruits
+```
+
+- The number of variables must match the number of values in the tuple, if not, you must use an asterix to collect the remaining values as a list
+```
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+
+(green, yellow, *red) = fruits
+```
 
 
+- join two tuples
+`tuple3 = tuple2 + tuple 1`
+- multiply tuples
+```
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
 
+print(mytuple)
+```
+o/p :
+`('apple', 'banana', 'cherry', 'apple', 'banana', 'cherry')`
+
+- `count()` -Returns the number of times a specified value occurs in a tuple
+- `index()` -Searches the tuple for a specified value and returns the position of where it was found
+ 
 
 
 
