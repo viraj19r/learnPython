@@ -92,6 +92,7 @@ print(random.randrange(1, 10))
   a = "Hello, World!"
   print(a.split(",")) # returns ['Hello', ' World!']
   ```
+  similarly the `join()` method joins two string
   ### string concatenation
   To concatenate, or combine, two strings we can use the + operator.
 
@@ -134,7 +135,7 @@ print(random.randrange(1, 10))
   ### [String Methods](https://www.w3schools.com/python/python_strings_methods.asp)
 
 ## Boolean(True or False)
-
+`
  The `bool()` function allows you to evaluate any value, and give you `True` or `False` in return.
 - Almost any value is evaluated to `True` if it has some sort of content.
 
@@ -392,6 +393,170 @@ o/p :
 - `count()` -Returns the number of times a specified value occurs in a tuple
 - `index()` -Searches the tuple for a specified value and returns the position of where it was found
  
+
+## Set
+
+- A set is a collection which is both unordered and un indexed.
+- Set items are unordered, unchangeable, and do not allow duplicate values.
+
+`thisset = {"apple", "banana", "cherry"}`
+
+- `len()` method is used to get the length of set
+- set can be of any data type and can contain different data types
+- `type()` of set is `<class 'set'>`
+- we can also create set using the `set()` constructor
+- Once a set is created, you cannot change its items, but you can add new items.
+- To add one item to a set use the `add()` method. `thisset.add("orange")`
+- To add items from another set into the current set, use the `update()` method.
+```
+thisset = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango", "papaya"}
+
+thisset.update(tropical)
+```
+- The object in the `update()` method does not have be a set, it can be any iterable object (tuples, lists, dictionaries etc).
+
+```
+thisset = {"apple", "banana", "cherry"}
+mylist = ["kiwi", "orange"]
+
+thisset.update(mylist)
+```
+- To remove an item in a set, use the `remove()`, or the `discard()` method.
+```
+thisset.remove("banana")
+thisset.discard("banana")
+```
+- If the item does not exist then `remove()` will raise an error but `discard()` will **not** raise any error
+
+- You can also use the `pop()`, method to remove an item, but this method will remove the last item. Remember that sets are unordered, so you will not know what item that gets removed.
+- The return value of the `pop()` method is the removed item.
+- The `clear()` method empties the set
+- The `del` keyword will delete the set completely
+
+### Join two sets
+You can use the `union()` method that returns a new set containing all items from both sets, or the `update()` method that inserts all the items from one set into another
+```
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+
+set3 = set1.union(set2)
+```
+```
+set1 = {"a", "b" , "c"}
+set2 = {1, 2, 3}
+
+set1.update(set2)
+```
+#### Keep only the duplicate items
+The `intersection()` method will return a new set, that only contains the items that are present in both sets.
+```
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+z = x.intersection(y)
+```
+#### Keep All, But NOT the Duplicates
+- The `symmetric_difference_update()` method will keep only the elements that are NOT present in both sets
+```
+x = {"apple", "banana", "cherry"}
+y = {"google", "microsoft", "apple"}
+
+x.symmetric_difference_update(y)
+```
+- The `symmetric_difference()` method will return a new set, that contains only the elements that are NOT present in both sets.
+
+- [All set methods](https://www.w3schools.com/python/python_sets_methods.asp)
+
+
+## Dictionary
+Dictionaries are used to store data values in `key:value` pairs.
+```
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+```
+- Dictionary items are unordered, changeable, and does not allow duplicates.
+- access dictionary items by using key names in square brackets
+` thisdict["brand"]`
+o/p -`Ford`
+
+- There is also a method called `get()` that will give the same result
+`x = thisdict.get("model")`
+
+- The `keys()` method will return a list of all the keys in the dictionary.
+`x = thisdict.keys()`
+
+-  length can be determined using the `len()` function
+-  `type()` method will give `<class 'dict'>`
+- The `values()` method will return a list of all the values in the dictionary.
+- **The list of keys and values is a view of dictionary, meaning that any changes done to the dictionary will  be reflected in the keys and values list**
+- The `items()` method will return each item in a dictionary, as tuples in a list.
+`x = thisdict.items()`
+
+- We can change the value of a specific item by referring to its key name
+```
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2018
+```
+- To update dictionary
+`thisdict.update({"year": 2020})`
+### Adding items
+Adding an item to the dictionary is done by using a new index key and assigning a value to it:
+
+```
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["color"] = "red"
+```
+- The `update()` method will update the dictionary with the items from a given argument. If the item does not exist, the item will be added. The argument must be a dictionary, or an iterable object with key:value pairs.
+`thisdict.update({"color": "red"})`
+
+### Remove items
+- The `pop()` method removes the item with the specified key name:
+
+`thisdict.pop("model")`
+- The `popitem()` method removes the last inserted item (in versions before 3.7, a random item is removed instead)
+- The `del` keyword removes the item with the specified key name. The `del` keyword can also delete the dictionary completely
+- The `clear()` method empties the dictionary
+- We can also use the `values()` method to return values of a dictionary
+```
+for x in thisdict.values():
+  print(x)
+```
+- Similarly, we can use the `keys()` method to return the keys of a dictionary
+```
+for x in thisdict.keys():
+  print(x)
+```
+- Loop through both keys and values, by using the `items()` method
+```
+for x, y in thisdict.items():
+  print(x, y)
+```
+### Copy a dictionary
+- We cannot copy a dictionary simply by typing `dict2 = dict1`, because `dict2` will only be a reference to `dict1`, and changes made in `dict1` will automatically also be made in `dict2`.
+- There are ways to make a copy, one way is to use the built-in Dictionary method `copy()`.
+`mydict = thisdict.copy()`
+
+- Make a copy of a dictionary with the `dict()` function
+`mydict = dict(thisdict)`
+
+-  *A dictionary can contain dictionaries, this is called nested dictionaries*.
+
+- [Dictionary Methods](https://www.w3schools.com/python/python_dictionaries_methods.asp)
+
+
+
 
 
 
