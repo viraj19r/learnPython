@@ -3,3 +3,9 @@
 - [Conditional in python](Notes/ConditionalStatements.md)
 - [Loops in python](Notes/Loops.md)
 - [Functions in python](Notes/Functions.md)
+- [Objects and Classes](Notes/ObjectAndClasses.md)
+- [Iterators](Notes/Iterators.md)
+- [Scope](Notes/Scope.md)
+
+
+
