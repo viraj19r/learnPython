@@ -2,3 +2,4 @@
 - [Datatypes in python](Notes/Datatypes.md)
 - [Conditional in python](Notes/ConditionalStatements.md)
 - [Loops in python](Notes/Loops.md)
+- [Functions in python](Notes/Functions.md)
