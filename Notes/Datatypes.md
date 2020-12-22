@@ -557,7 +557,8 @@ for x, y in thisdict.items():
 
 
 
-
+## Python Arrays
+To work with arrays in python, we need to import a library
 
 
 

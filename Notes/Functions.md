@@ -151,8 +151,6 @@ x = lambda a, b : a * b
 print(x(5, 6))
 ```
 
-
-
 - The power of lambda is better shown when we use them as an anonymous function inside another function.
 
 ```
