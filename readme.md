@@ -12,4 +12,5 @@
   - [Python JSON](Notes/JSON.md)
   - [Regular Expression](Notes/RegEx.md)
 - [Python PIP](Notes/PIP.md)
+- [Python exception handling](Notes/ExceptionHandling.md)
 
