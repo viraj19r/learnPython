@@ -9,6 +9,7 @@
 - [Modules](Notes/Modules.md)
   - [Date and Time](Notes/DateTime.md)
   - [Math](Notes/Math.md)
-
+  - [Python JSON](Notes/JSON.md)
+  - [Regular Expression](Notes/RegEx.md)
 
 
