@@ -6,6 +6,8 @@
 - [Objects and Classes](Notes/ObjectAndClasses.md)
 - [Iterators](Notes/Iterators.md)
 - [Scope](Notes/Scope.md)
+- [Modules](Notes/Modules.md)
+- [Date and Time](Notes/DateTime.md)
 
 
 
