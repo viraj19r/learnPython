@@ -11,5 +11,5 @@
   - [Math](Notes/Math.md)
   - [Python JSON](Notes/JSON.md)
   - [Regular Expression](Notes/RegEx.md)
-
+- [Python PIP](Notes/PIP.md)
 
