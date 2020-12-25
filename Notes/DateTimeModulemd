@@ -1,0 +1,29 @@
+We can import a module named `datetime` to work with dates as objects.
+
+```
+import datetime
+
+x = datetime.datetime.now()
+print(x)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
