@@ -7,7 +7,8 @@
 - [Iterators](Notes/Iterators.md)
 - [Scope](Notes/Scope.md)
 - [Modules](Notes/Modules.md)
-- [Date and Time](Notes/DateTime.md)
+  - [Date and Time](Notes/DateTime.md)
+  - [Math](Notes/Math.md)
 
 
 
