@@ -133,6 +133,8 @@ print(random.randrange(1, 10))
   Ex: `\'`, `\\`(backslash), `\n`(new line),etc
 
   ### [String Methods](https://www.w3schools.com/python/python_strings_methods.asp)
+  ### [string formatting](https://www.w3schools.com/python/python_string_formatting.asp)
+      [string format reference](https://www.w3schools.com/python/ref_string_format.asp)
 
 ## Boolean(True or False)
 `
