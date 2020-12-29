@@ -538,23 +538,137 @@ o/p:
  [0 1 5]]
 ```
 
+## Filtering Array
+Getting some elements out of a existing array and creating a new array out of them is called filtering
+In NumPy, we filter an array using a *boolean index list*.
+A boolean index list is a list of booleans corresponding to indexes in the array.
+
+If the value at an index is `True` that element is contained in the filtered array, if the value at that index is `False` that element is excluded from the filtered array
+
+```(not use this approach)
+import numpy as np
+
+arr = np.array([41, 42, 43, 44])
+
+x = [True, False, True, False]
+
+newArr = arr[x]
+
+print(newArr)
+```
+The example above will return `[41, 43]`
+Because the new filter contains only the values where the filter array had the value `True`.
+
+### Creating the Filter Array(not use this)
+In the example above we hard-coded the `True` and `False` values, but the common use is to create a filter array based on conditions.
+create a filter array that will return only values greater than 42
+```
+import numpy as np
+
+arr = np.array([41, 42, 43, 44])
+
+# Create an empty list
+filter_arr = []
+
+# go through each element in arr
+for element in arr:
+  # if the element is higher than 42, set the value to True, otherwise False:
+  if element > 42:
+    filter_arr.append(True)
+  else:
+    filter_arr.append(False)
+
+newarr = arr[filter_arr]
+
+print(filter_arr)
+print(newarr)
+```
+### Creating Filter Directly From Array
+We can directly substitute the array instead of the iterable variable in our condition and it will work just as we expect it to
+
+```
+import numpy as np
+
+arr = np.array([41, 42, 43, 44])
+
+filter_arr = arr > 42
+
+newarr = arr[filter_arr]
+
+print(filter_arr)
+print(newarr)
+```
+
+## Random Number
+Random number does NOT mean a different number every time. Random means something that can not be predicted logically.
+
+NumPy offers the `random` module to work with random numbers.
+- Generate a random integer from 0 to 100:
+```
+from numpy import random
+
+x = random.randint(100)
+
+print(x)
+```
+- The random module's `rand()` method returns a random float between 0 and 1
+```
+from numpy import random
+x = random.rand()
+print(x)
+```
+- we can also generate random arrays by above two methods
+The `randint()` method takes a `size` parameter where you can specify the shape of an array.
 
 
+Generate a 1-D array containing 5 random integers from 0 to 100:
+```
+from numpy import random
+
+x=random.randint(100, size=(5))
+
+print(x)
+```
+
+Generate a 2-D array with 3 rows, each row containing 5 random integers from 0 to 100:
+```
+from numpy import random
+
+x = random.randint(100, size=(3, 5))
+```
+
+- The `rand()` method also allows us to specify the shape of the array.
+`x = random.rand(5)`
+`x = random.rand(3, 5)`
+
+### Generate Random Number From Array
+The `choice()` method allows you to generate a random value based on an array of values.
+The `choice()` method takes an array as a parameter and randomly returns one of the values.
+
+```
+from numpy import random
+
+x = random.choice([3, 5, 7, 9])
+```
+
+The `choice()` method also allows us to return an array of values.
+
+Add a `size` parameter to specify the shape of the array
+
+`x = random.choice([3, 5, 7, 9], size=(3, 5))`
+o/p like:
+```
+[[9 3 5 5 7] 
+ [7 5 3 3 9] 
+ [7 5 9 9 7]]
+```
+
+- [Random number in more detail](https://www.w3schools.com/python/numpy_random.asp)
 
 
+## Numpy ufuncs
+ufuncs stands for "Universal Functions" and they are NumPy functions that operates on the ndarray object
+they include all type of mathematical operation on arrays
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [ufuncs in detail](https://www.w3schools.com/python/numpy_ufunc.asp)
 
