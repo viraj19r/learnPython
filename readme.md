@@ -15,3 +15,19 @@
 - [Python exception handling](Notes/ExceptionHandling.md)
 - [File Handling](Notes/FileHandling.md)
 
+- Auto Pep8 is official code formatter for python
+## Python Numpy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
