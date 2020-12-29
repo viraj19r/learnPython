@@ -17,7 +17,8 @@
 
 - Auto Pep8 is official code formatter for python
 ## Python Numpy
-
+- [Introduction](Notes/Numpy/Introduction.md)
+- [Array operation](Notes/Numpy/ArrayOperations.md)
 
 
 
