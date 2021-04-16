@@ -1,3 +1,4 @@
+# Notes
 - [Introduction and basic python](Notes/Introductory%20notes.md)
 - [Datatypes in python](Notes/Datatypes.md)
 - [Conditional in python](Notes/ConditionalStatements.md)
