@@ -262,7 +262,7 @@ alphabets = {'a':'apple', 'b':'ball', 'c':'cat'} #dictionary
 vowels = {'a', 'e', 'i' , 'o', 'u'} #set
 ```
 
-- We can use the `type()` function to know which class a variable or a value belongs to. Similarly, the `isinstance()` function is used to check if an object belongs to a particular class.
+- We can use the `type()` function to know which class a variable or a value belongs to. Similarly, the `isinstance(1,int)` function is used to check if an object belongs to a particular class.
 
 ## Python type conversion and type casting
 

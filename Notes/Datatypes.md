@@ -150,13 +150,7 @@ print(random.randrange(1, 10))
 - There are not many values that evaluate to False, except empty values, such as `()`, `[]`, `{}`, `""`, the number `0`, and the value None. And of course the value False evaluates to False.
 - One more value, or object in this case, evaluates to False, and that is if you have an object that is made from a class with a `__len__` function that returns `0` or `False`
 
-   ```
-    def __len__(self):
-    return 0
 
-    myobj = myclass()
-    print(bool(myobj))
-   ```
 
 Python also has many built-in functions that return a boolean value, like the `isinstance()` function, which can be used to determine if an object is of a certain data type:
 
@@ -246,7 +240,7 @@ thislist = ["apple", "banana", "cherry"]
 [print(x) for x in thislist]
 ```
 
-code without list comprehension
+- code without list comprehension
 ```
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 newlist = []
@@ -255,7 +249,7 @@ for x in fruits:
   if "a" in x:
     newlist.append(x)
 ```
-Now code with list comprehension
+- Now code with list comprehension
 ```
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 
@@ -306,6 +300,7 @@ def myfunc(n):
 
 thislist = [100, 50, 65, 82, 23]
 thislist.sort(key = myfunc)
+print(thislist)
 ```
 
 - By default the `sort()` function is case sensitive
@@ -560,7 +555,7 @@ for x, y in thisdict.items():
 
 
 ## Python Arrays
-To work with arrays in python, we need to import a library
+To work with arrays in python, we need to import a library(Numpy)
 
 
 
