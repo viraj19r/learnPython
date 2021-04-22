@@ -32,7 +32,8 @@ print(p1.age)
 
 ## Object Methods
 Methods in objects are functions that belong to the object
-Methods in objects are functions that belong to the object
+
+
 ```
 class Person:
   def __init__(self, name, age):
