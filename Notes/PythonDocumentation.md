@@ -14,4 +14,9 @@
   - system defined names/dunder names(start or end with `__`) 
 - String Literal
   - String format
+- Functions
+  - generator functions
+  - coroutine functions
+  - asynchronous functions
+  - 
 
